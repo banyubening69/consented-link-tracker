@@ -1,35 +1,23 @@
-# Consented Link Tracker — Admin Login (Railway Ready)
+# Consented Link Tracker (Railway Ready)
 
-Aplikasi pelacak link yang meminta **izin lokasi** (legal & privasi). Admin dashboard dilindungi **username/password**.
+## 🚀 Cara Deploy ke Railway
 
-## Jalankan Lokal
-```bash
-cp .env.example .env   # ubah ADMIN_USER & ADMIN_PASS
-npm install
-npm start
-# buka http://localhost:3000 (browser akan minta username/password)
-```
+1. Fork atau upload repo ini ke GitHub.
+2. Buka [Railway](https://railway.app).
+3. Buat **New Project** → Deploy from GitHub.
+4. Tambahkan **Environment Variables** di Railway:
+   - `ADMIN_USER` → admin
+   - `ADMIN_PASS` → Rahasia2025!
+   - (opsional) `PORT` → 3000
+5. Railway otomatis build dan jalanin app.
+6. Akses URL Railway → login pakai user & pass di atas.
 
-## Deploy ke Railway (langkah ringkas)
-1. Buat repo GitHub baru, upload isi folder proyek ini.
-2. Buka https://railway.app → New Project → Deploy from GitHub → pilih repo.
-3. Setelah dibuat, buka tab **Variables** lalu tambahkan:
-   - `ADMIN_USER` = (username admin kamu)
-   - `ADMIN_PASS` = (password kuat)
-   - (opsional) `PORT` = 3000
-4. Railway otomatis `npm install` dan `npm start`.
-5. Buka domain publik dari Railway → login pakai kredensial admin.
+## 🔑 Login
+- Username: dari `ADMIN_USER`
+- Password: dari `ADMIN_PASS`
 
-## Cara Pakai
-- Dashboard admin (/) → buat link baru → dapat **Tracking URL** `/l/:slug`.
-- Bagikan Tracking URL itu ke pengunjung.
-- Pengunjung melihat halaman izin lokasi; apapun pilihannya, tetap diarahkan ke target.
-- Izin diberikan → koordinat (lat, lng, akurasi) tersimpan.
-- Riwayat kunjungan terlihat di halaman detail link.
-
-## Keamanan & Privasi
-- Gunakan HTTPS (Railway menyediakan otomatis).
-- Ganti `ADMIN_PASS` dengan password kuat (panjang, unik).
-- Tambahkan halaman Kebijakan Privasi sesuai regulasi (UU PDP/ITE).
-
-— Dibuat: 2025-08-17T15:59:39.064682Z
+## 📌 Endpoint
+- `/` → dashboard
+- `/create` → buat link (POST, body: `{ "slug": "nama" }`)
+- `/l/:slug` → link tracking publik
+- `/logs` → lihat semua log

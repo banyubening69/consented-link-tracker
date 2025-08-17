@@ -1,21 +1,15 @@
 {
-  "name": "consented-link-tracker-admin",
-  "version": "1.1.0",
-  "description": "Link tracker with consented geolocation and basic admin auth (Express + SQLite).",
+  "name": "consented-link-tracker",
+  "version": "1.0.0",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
-    "body-parser": "^1.20.2",
-    "dotenv": "^16.4.5",
-    "express": "^4.19.2",
-    "express-basic-auth": "^1.2.1",
-    "nanoid": "^5.0.7",
-    "sqlite": "^5.1.6",
-    "sqlite3": "^5.1.7"
+    "express": "^4.18.2",
+    "body-parser": "^1.20.2"
   },
   "engines": {
-    "node": ">=18"
+    "node": "18.x"
   }
 }
